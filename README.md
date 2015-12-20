@@ -1,9 +1,8 @@
 # php-gif
 Below GIF image contains real-time data. A PHP script calculates the pending time till new year and generates the GIF image.
-![Live countdown to new year](http://only-media.nl/gif/gif.php)
+An ideal solution for sending e-mails with real-time data to customers. E-mail clients give you the opportunity to load images by URL and so everytime the client re-opens the e-mail message, the GIF will be re-generated with real-time data.
 
-## TIP
-An ideal solution for sending e-mails with real-time data to customers. E-mail clients give you the oportunity to load images by URL and so everytime a client re-opens the mail, it gives realtime data about the current pending time.
+![Live countdown to new year](http://only-media.nl/gif/gif.php)
 
 
 The MIT License (MIT)

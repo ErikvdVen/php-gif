@@ -1,5 +1,7 @@
 # php-gif
 
+![Live countdown to new year](http://only-media.nl/gif/gif.php)
+
 The MIT License (MIT)
 
 Copyright (c) 2015 Erik van de Ven

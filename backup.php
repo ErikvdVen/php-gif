@@ -1,5 +1,4 @@
 <?php
-header ('Content-type:image/gif');
 include('GIFEncoder.class.php');
 
 $now = new DateTime();
@@ -7,11 +6,8 @@ $future_date = new DateTime('2016-01-01 00:00:00');
 $interval = $future_date->diff($now);
 
 
-$d = $interval->format("%a");
-$h = $interval->format("%h");
-$m = $interval->format("%i");
-$s = $interval->format("%s");
 
+Class GIFGenerator {
 for($i=1;$i<30;$i++){
 		// Open the first source image and add the text.
 		$image = imagecreatefromjpeg('./newyear_count.jpg');

@@ -5,7 +5,7 @@ For below image this doesn't work, unfortunately, cause github downloads the ima
 
 ![Live countdown to new year](http://only-media.nl/gif/gif.php)
 
-#License & Credits
+##License & Credits
 
 This software is published under the [MIT License](https://en.wikipedia.org/wiki/MIT_License).
 

@@ -20,7 +20,7 @@ header ('Content-type:image/gif');
 // Include the GIFGenerator class
 include('GIFGenerator.class.php');
 ```
-On the next lines you can create a GIF image by using the GIFGenerator object, and eventually `echo` the image to the screen by calling the generate function: `echo $gif->generate($imageFrames);`.
+On the next lines you can create a GIF image by using the GIFGenerator object, and eventually generate the image and echo the results on the screen: `echo $gif->generate($imageFrames);`.
 
 ```php
 // Initialize a new GIFGenerator object

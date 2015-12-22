@@ -46,7 +46,7 @@ $imageFrames = array(
 );
 ```
 Finally you generate the image and `echo` the results on the screen: 
-```
+```php
 echo $gif->generate($imageFrames);
 ```
 

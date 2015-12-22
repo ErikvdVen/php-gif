@@ -9,6 +9,6 @@ For below image this doesn't work, unfortunately, cause github downloads the ima
 
 This software is published under the [MIT License](https://en.wikipedia.org/wiki/MIT_License).
 
-GIFEncoder
+######GIFEncoder
 
 GIFEncoder.class.php contains minor adaptations from the GIFEncoder PHP class by [László Zsidi](http://gifs.hu).

@@ -52,7 +52,7 @@ echo $gif->generate($imageFrames);
 
 ##Example
 
-A more complete example. You could copy/paste below code to a file and execute it in the browser to view a more complete result. As you can see it's not required to use text in your GIF image and you can add as much text per frame and as much frames per GIF image as you like.
+A more complete example. You could copy/paste below code to a file and execute it in the browser to view a more complete result. As you can see it's not required to use text in your GIF image and you can add as much text per frame, and as much frames per GIF image as you like.
 
 ```php
 <?php

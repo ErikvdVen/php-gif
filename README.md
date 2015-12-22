@@ -5,6 +5,123 @@ For below image this doesn't work, unfortunately, cause github downloads the ima
 
 ![Live countdown to new year](http://only-media.nl/gif/gif.php)
 
+##Getting Started
+
+Create a file and add those headers at the beginning of the file:
+```
+// Caching disable headers
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+// Output as a GIF image
+header ('Content-type:image/gif');
+
+// Include the GIFGenerator class
+include('GIFGenerator.class.php');
+```
+Next you can create a GIF image by using the GIFGenerator object, and echo the image to the screen by calling the `echo $gif->generate($imageFrames);` function.
+
+```
+// Initialize a new GIFGenerator object
+$gif = new GIFGenerator();
+
+// Create a multidimensional array with all the image frames
+$imageFrames = array(
+	'repeat' => false,
+	'frames' => array(
+		array(
+			'image' => './images/newyear.jpg',
+			'text' => array(
+				array(
+					'text' => 'Hello GIF frame 1',
+					'font-color' => '#000',
+					'x-position' => 140,
+					'y-position' => 138
+				)
+			),
+			'delay' => 100
+		),
+	)
+);
+
+echo $gif->generate($imageFrames);
+```
+
+##Example
+
+A more complete example. You could copy/paste below code to a file and call it in the browser to view a more complete result. As you can see it's not required to use text in your GIF image and you can add as much text per frame and as much frames per GIF image as you like.
+
+```
+<?php
+// Caching disable headers
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+// Output as a GIF image
+header ('Content-type:image/gif');
+
+// Include the GIFGenerator class
+include('GIFGenerator.class.php');
+
+// Initialize a new GIFGenerator object
+$gif = new GIFGenerator();
+
+// Create a multidimensional array with all the image frames
+$imageFrames = array(
+	'repeat' => 5,
+	'frames' => array(
+		array(
+			'image' => './images/newyear.jpg',
+			'text' => array(
+				array(
+					'text' => 'Hello GIF frame 1',
+					'font' => './fonts/Lato-Light.ttf',
+					'font-size' => 30,
+					'angle' => 0,
+					'font-color' => '#000',
+					'x-position' => 140,
+					'y-position' => 138
+				)
+			),
+			'delay' => 100
+		),
+		array(
+			'image' => './images/newyear.jpg',
+			'text' => array(
+				array(
+					'text' => 'Hello GIF frame 2',
+					'font' => './fonts/Lato-Light.ttf',
+					'font-size' => 15,
+					'angle' => 0,
+					'font-color' => '#000',
+					'x-position' => 140,
+					'y-position' => 138
+				),
+				array(
+					'text' => 'Hello GIF frame 2',
+					'font' => './fonts/Lato-Light.ttf',
+					'font-size' => 15,
+					'angle' => 0,
+					'font-color' => '#000',
+					'x-position' => 140,
+					'y-position' => 108
+				)
+			),
+			'delay' => 100
+		),
+		array(
+			'image' => './images/newyear.jpg',
+			'delay' => 50
+		)
+	)
+);
+
+echo $gif->generate($imageFrames);
+?>
+```
+
 ##License & Credits
 
 This software is published under the [MIT License](https://en.wikipedia.org/wiki/MIT_License).

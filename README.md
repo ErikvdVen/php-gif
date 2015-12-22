@@ -7,7 +7,7 @@ For below image this doesn't work, unfortunately, cause github downloads the ima
 
 ##Getting Started
 
-Create a file and add those headers at the beginning of the file:
+Create a file and add these headers at the beginning of the file:
 ```php
 // Caching disable headers
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -20,7 +20,7 @@ header ('Content-type:image/gif');
 // Include the GIFGenerator class
 include('GIFGenerator.class.php');
 ```
-Next you can create a GIF image by using the GIFGenerator object, and echo the image to the screen by calling the `echo $gif->generate($imageFrames);` function.
+On the next lines you can create a GIF image by using the GIFGenerator object, and eventually `echo` the image to the screen by calling the generate function: `echo $gif->generate($imageFrames);`.
 
 ```php
 // Initialize a new GIFGenerator object

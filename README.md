@@ -8,7 +8,7 @@ For below image this doesn't work, unfortunately, cause github downloads the ima
 ##Getting Started
 
 Create a file and add those headers at the beginning of the file:
-```
+```php
 // Caching disable headers
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
@@ -22,7 +22,7 @@ include('GIFGenerator.class.php');
 ```
 Next you can create a GIF image by using the GIFGenerator object, and echo the image to the screen by calling the `echo $gif->generate($imageFrames);` function.
 
-```
+```php
 // Initialize a new GIFGenerator object
 $gif = new GIFGenerator();
 
@@ -52,7 +52,7 @@ echo $gif->generate($imageFrames);
 
 A more complete example. You could copy/paste below code to a file and call it in the browser to view a more complete result. As you can see it's not required to use text in your GIF image and you can add as much text per frame and as much frames per GIF image as you like.
 
-```
+```php
 <?php
 // Caching disable headers
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");

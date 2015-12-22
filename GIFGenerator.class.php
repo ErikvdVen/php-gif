@@ -67,7 +67,7 @@ Class GIFGenerator {
 
 				   	// Overwrite all the defaults with the arguments
 			    	$args = array_merge($defaults,$text);
-			    	$fontColor = is_array($args['font-color']) ? $args['font-color'] : $this->hex2rgb($args['font-color']);
+			    	$fontColor = is_array($args['font-color']) ? $args['font-color'] : $this->_hex2rgb($args['font-color']);
 				    $text_color = imagecolorallocate($image, $fontColor[0], $fontColor[1], $fontColor[2]);
 
 					imagettftext(
@@ -119,7 +119,7 @@ Class GIFGenerator {
 	    return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== FALSE);
 	}
 
-	private function hex2rgb($hex) {
+	private function _hex2rgb($hex) {
 	   $hex = str_replace("#", "", $hex);
 
 	   if(strlen($hex) == 3) {

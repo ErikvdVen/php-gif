@@ -22,7 +22,7 @@ $interval = $future_date->diff($now);
 // Create a multidimensional array with all the image frames
 $imageFrames = array('repeat' => false, 'frames' => array());
 
-for ($i=1; $i<30; $i++){
+for ($i=1; $i<20; $i++){
 
 	$clockParts = array(
 		'd' => $interval->format("%a"),
@@ -47,7 +47,16 @@ for ($i=1; $i<30; $i++){
 		$imageFrames['frames'][$i]['text'][$key]['text'] = $value;
 	}
 
-	$imageFrames['frames'][$i]['text']['d']['x-position'] = ($clockParts['d'] < 10) ? 101 : 91;
+	if($clockParts['d'] >= 100){
+		$imageFrames['frames'][$i]['text']['d']['x-position'] = 81;
+	}
+	if($clockParts['d'] < 100){
+		$imageFrames['frames'][$i]['text']['d']['x-position'] = 91;
+	}
+	if($clockParts['d'] < 10){
+		$imageFrames['frames'][$i]['text']['d']['x-position'] = 101;
+	}
+
 	$imageFrames['frames'][$i]['text']['h']['x-position'] = ($clockParts['h'] < 10) ? 227 : 217;
 	$imageFrames['frames'][$i]['text']['m']['x-position'] = ($clockParts['m'] < 10) ? 352 : 342;
 	$imageFrames['frames'][$i]['text']['s']['x-position'] = ($clockParts['s'] < 10) ? 479 : 469;
@@ -56,6 +65,22 @@ for ($i=1; $i<30; $i++){
 	$future_date = $future_date->modify("-1 second");
 	$interval = $future_date->diff($now);
 }
+
+// Add a different last frame
+$imageFrames['frames'][] = array(
+	'image' => '../images/newyear.jpg',
+	'text' => array(
+		array(
+			'text' => 'It\'s almost new year!!!',
+			'font-size' => 30,
+			'angle' => 0,
+			'font-color' => '#000',
+			'y-position' => 135,
+			'x-position' => 120
+		)
+	),
+	'delay' => 100
+);
 
 echo $gif->generate($imageFrames);
 ?>

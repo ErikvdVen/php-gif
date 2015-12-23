@@ -7,8 +7,8 @@ For below image this doesn't work, unfortunately, cause GitHub downloads the ima
 
 ##Note
 This script works with Gmail, at the moment of writing, which is 2015-12-23.
-Gmail loads the images via their proxy, so not directly from source. But this shouldn't be any problem! There are different opinions about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations that Gmail will cache the images via its proxy, but that cache respects the cache headers, so you can instruct Gmail how often to refresh the data.
-I personally had no trouble with Gmail whatsoever! This countdown image worked perfectly for me. You can test it yourself. Every single time, after reloading the e-mail message which contained the image, it contained new data. So the countdown didn't start all over again, but resumed where it had left off.
+Gmail loads the images via their proxy, so not directly from source. There are different opinions about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations that Gmail will cache the images via its proxy, but that cache respects the cache headers, so you can instruct Gmail how often to refresh the data.
+I personally had no trouble with the cache whatsoever! This countdown image worked perfectly for me. You can test it yourself. Every single time, after reloading the e-mail message which contained the image, it contained new data. So the countdown didn't start all over again, but resumed where it had left off. Just to be sure I've added some cache disabling headers in the examples.
 
 ##Getting Started
 

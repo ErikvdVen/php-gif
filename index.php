@@ -8,7 +8,7 @@ header("Pragma: no-cache");
 header ('Content-type:image/gif');
 
 // Include the GIFGenerator class
-include('GIFGenerator.class.php');
+include( realpath(__DIR__) . 'GIFGenerator.class.php');
 
 // Initialize a new GIFGenerator object
 $gif = new GIFGenerator();

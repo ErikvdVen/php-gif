@@ -8,7 +8,7 @@ header("Pragma: no-cache");
 header ('Content-type:image/gif');
 
 // Include the GIFGenerator class
-include('../GIFGenerator.class.php');
+include( realpath(__DIR__) . '/../GIFGenerator.class.php');
 
 // Initialize a new GIFGenerator object
 $gif = new GIFGenerator();
@@ -39,7 +39,7 @@ for ($i=1; $i<20; $i++){
 					);
 
 	$imageFrames['frames'][$i] = array('image'=>null,'delay'=>null);
-	$imageFrames['frames'][$i]['image'] = '../images/newyear_count.jpg';
+	$imageFrames['frames'][$i]['image'] = realpath(__DIR__) . '/../images/newyear_count.png';
 	$imageFrames['frames'][$i]['delay'] = 100;
 
 	foreach($clockParts as $key => $value){
@@ -68,7 +68,7 @@ for ($i=1; $i<20; $i++){
 
 // Add a different last frame
 $imageFrames['frames'][] = array(
-	'image' => '../images/newyear.jpg',
+	'image' => realpath(__DIR__) . '/../images/newyear.png',
 	'text' => array(
 		array(
 			'text' => 'It\'s almost new year!!!',

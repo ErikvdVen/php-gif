@@ -1,13 +1,12 @@
 # php-gif
 Below GIF image is an example image which can contain real-time data. A PHP script calculates the pending time till new year and generates the GIF image. An ideal solution for sending e-mails with real-time data to customers. E-mail clients give you the opportunity to load images by URL and so everytime the client re-opens the e-mail message, the GIF will be re-generated with real-time data.
 
-For below image this doesn't work, unfortunately, cause github downloads the image and stores it. Most e-mail clients, however, do load the images directly from source :)
+For below image this doesn't work, unfortunately, cause github downloads the image once and stores it locally. Most e-mail clients, however, do load the images directly from source :) Successfully tested with Gmail and Outlook 2011.
 
 ![Live countdown to new year](http://only-media.nl/gif/gif.php)
 
 *Note: Gmail loads the images via their proxy, so not directly from source. But this shouldn't be any problem! There are different opinions about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations that Gmail will cache the images via its proxy, but that cache respects the cache headers, so you can instruct Gmail how often to refresh the data.
-
-I personally had no trouble with gmail whatsoever! This countdown image worked perfectly for me. You can test it yourself. Every single time, after reloading the e-mail message which contained the image it contained new data. So the didn't start all over again, but resumed where it had left off.*
+I personally had no trouble with Gmail whatsoever! This countdown image worked perfectly for me. You can test it yourself. Every single time, after reloading the e-mail message which contained the image it contained new data. So it didn't start all over again, but resumed where it had left off.*
 
 ##Getting Started
 

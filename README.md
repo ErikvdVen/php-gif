@@ -6,7 +6,7 @@ For below image this doesn't work, unfortunately, because GitHub downloads the i
 ![Live countdown to new year](http://only-media.nl/gif/gif.php)
 
 ##Note
-I received some uncertain questions about Gmail so lets describe this a bit in more detail. This script is successfully tested with Gmail, at the moment of writing, which is *2015-12-23*. Gmail loads the images via their proxy, so not directly from source. There are different speculations about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations Gmail caches the images, but still respect the cache headers, so you can instruct Gmail how often to refresh the data. I personally had no trouble with the cache whatsoever! I've tested this image numerous times in Gmail and of course you can test it yourself as well. Just to be sure I've added some cache disabling headers in the examples.
+I received some questions about Gmail so lets describe this mail client a bit in more detail. This script is successfully tested with Gmail, at the moment of writing, which is *2015-12-23*. Gmail loads the images via their proxy, so not directly from source. There are different speculations about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations Gmail caches the images, but still respect the cache headers, so you can instruct Gmail how often to refresh the data. I personally had no trouble with the cache whatsoever! I've tested this image numerous times in Gmail and of course you can test it yourself as well. Just to be sure I've added some cache disabling headers in the examples.
 
 ##Getting Started
 

@@ -10,7 +10,7 @@ This script is successfully tested with Gmail, at the moment of writing, which i
 
 ##Getting Started
 
-Create a file and add these headers at the beginning of the file:
+Create a PHP file and add these headers at the beginning of the file:
 ```php
 // Caching disable headers
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");

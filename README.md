@@ -5,7 +5,7 @@ For below image this doesn't work, unfortunately, cause github downloads the ima
 
 ![Live countdown to new year](http://only-media.nl/gif/gif.php)
 
-Note: Gmail loads the images via their proxy, so not directly from source. There are different opinions about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations that Gmail will cache the images via its proxy, but that cache respects the cache headers, so you can instruct Gmail how often to refresh the data. I PERSONALLY, HAD NO TROUBLE WITH THE CACHE WHATSOVER. This countdown image worked perfectly for me. You can test it yourself. Every single time, after reloading the e-mail message which contained the image it contained new data. So the didn't start all over again, but resumed where it had left off.
+*Note: Gmail loads the images via their proxy, so not directly from source. There are different opinions about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations that Gmail will cache the images via its proxy, but that cache respects the cache headers, so you can instruct Gmail how often to refresh the data. I PERSONALLY, HAD NO TROUBLE WITH GMAIL WHATSOVER. This countdown image worked perfectly for me. You can test it yourself. Every single time, after reloading the e-mail message which contained the image it contained new data. So the didn't start all over again, but resumed where it had left off.*
 
 ##Getting Started
 

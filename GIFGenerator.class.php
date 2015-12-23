@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 include('GIFEncoder.class.php');
 
 Class GIFGenerator {
@@ -23,7 +19,7 @@ Class GIFGenerator {
 	        "y-position" => 100,
 	        "x-position" => 100,
 	        "angle" => 0,
-	        "font" => './fonts/Lato-Light.ttf',
+	        "font" => __DIR__.'/fonts/Lato-Light.ttf',
 	        "font-color" => array(255,255,255),
 	        "font-size" => 12,
 	        "delay" => 100,

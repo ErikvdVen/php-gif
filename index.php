@@ -8,7 +8,7 @@ header("Pragma: no-cache");
 header ('Content-type:image/gif');
 
 // Include the GIFGenerator class
-include( realpath(__DIR__) . 'GIFGenerator.class.php');
+include( realpath(__DIR__) . '/GIFGenerator.class.php');
 
 // Initialize a new GIFGenerator object
 $gif = new GIFGenerator();
@@ -18,11 +18,11 @@ $imageFrames = array(
 	'repeat' => 5,
 	'frames' => array(
 		array(
-			'image' => './images/newyear.jpg',
+			'image' => realpath(__DIR__) . '/images/newyear.jpg',
 			'text' => array(
 				array(
 					'text' => 'Hello GIF frame 1',
-					'font' => './fonts/Lato-Light.ttf',
+					'font' => realpath(__DIR__) . '/fonts/Lato-Light.ttf',
 					'font-size' => 30,
 					'angle' => 0,
 					'font-color' => '#000',
@@ -33,11 +33,11 @@ $imageFrames = array(
 			'delay' => 100
 		),
 		array(
-			'image' => './images/newyear.jpg',
+			'image' => realpath(__DIR__) . '/images/newyear.jpg',
 			'text' => array(
 				array(
 					'text' => 'Hello GIF frame 2',
-					'font' => './fonts/Lato-Light.ttf',
+					'font' => realpath(__DIR__) . '/fonts/Lato-Light.ttf',
 					'font-size' => 15,
 					'angle' => 0,
 					'font-color' => '#000',
@@ -46,7 +46,7 @@ $imageFrames = array(
 				),
 				array(
 					'text' => 'Hello GIF frame 2',
-					'font' => './fonts/Lato-Light.ttf',
+					'font' => realpath(__DIR__) . '/fonts/Lato-Light.ttf',
 					'font-size' => 15,
 					'angle' => 0,
 					'font-color' => '#000',
@@ -57,7 +57,7 @@ $imageFrames = array(
 			'delay' => 100
 		),
 		array(
-			'image' => './images/newyear.jpg',
+			'image' => realpath(__DIR__) . '/images/newyear.jpg',
 			'delay' => 50
 		)
 	)

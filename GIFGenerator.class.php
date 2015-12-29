@@ -19,9 +19,9 @@ Class GIFGenerator {
 	        "y-position" => 100,
 	        "x-position" => 100,
 	        "angle" => 0,
-	        "font" => __DIR__.'/fonts/Lato-Light.ttf',
-	        "font-color" => array(255,255,255),
-	        "font-size" => 12,
+	        "fonts" => __DIR__.'/fonts/Lato-Light.ttf',
+	        "fonts-color" => array(255,255,255),
+	        "fonts-size" => 12,
 	        "delay" => 100,
 	        "repeat" => 0
 	    );
@@ -32,12 +32,29 @@ Class GIFGenerator {
 		$this->_defaultYPosition = $args['y-position'];
 		$this->_defaultXPosition = $args['x-position'];
 		$this->_defaultAngle = $args['angle'];
-		$this->_defaultFont = $args['font'];
-		$this->_defaultFontColor = $args['font-color'];
-		$this->_defaultFontSize = $args['font-size'];
+		$this->_defaultFont = $args['fonts'];
+		$this->_defaultFontColor = $args['fonts-color'];
+		$this->_defaultFontSize = $args['fonts-size'];
 		$this->_defaultDelay = $args['delay'];
 		$this->_defaultRepeat = $args['repeat'];
 	}
+
+    private function imagettftextSp($image, $size, $angle, $x, $y, $color, $font, $text, $spacing = 0)
+    {
+        if ($spacing == 0)
+        {
+            $bbox = imagettftext($image, $size, $angle, $x, $y, $color, $font, $text);
+        }
+        else
+        {
+            $temp_x = $x;
+            for ($i = 0; $i < strlen($text); $i++)
+            {
+                $bbox = imagettftext($image, $size, $angle, $temp_x, $y, $color, $font, $text[$i]);
+                $temp_x += $spacing + ($bbox[2] - $bbox[0]);
+            }
+        }
+    }
 
 	public function generate(array $array) {
 		$frames = array();
@@ -48,33 +65,35 @@ Class GIFGenerator {
 			$image = $this->_createImage($frame['image']);
 			
 			if(array_key_exists('text', $frame))
-				foreach($frame['text'] as $text){
+				foreach($frame['text'] as $text) {
 
-					// Set defaults
-					$defaults = array(
-				        "angle" => $this->_defaultAngle,
-				        "font" => $this->_defaultFont,
-				        "font-color" => $this->_defaultFontColor,
-				        "font-size" => $this->_defaultFontSize,
-				        "y-position" => $this->_defaultYPosition,
-				        "x-position" => $this->_defaultXPosition,
-				        "text" => null
-				    );
+                    // Set defaults
+                    $defaults = array(
+                        "angle" => $this->_defaultAngle,
+                        "fonts" => $this->_defaultFont,
+                        "fonts-color" => $this->_defaultFontColor,
+                        "fonts-size" => $this->_defaultFontSize,
+                        "y-position" => $this->_defaultYPosition,
+                        "x-position" => $this->_defaultXPosition,
+                        "text" => null,
+                        "letter-spacing" => 0
+                    );
 
-				   	// Overwrite all the defaults with the arguments
-			    	$args = array_merge($defaults,$text);
-			    	$fontColor = is_array($args['font-color']) ? $args['font-color'] : $this->_hex2rgb($args['font-color']);
-				    $text_color = imagecolorallocate($image, $fontColor[0], $fontColor[1], $fontColor[2]);
+                    // Overwrite all the defaults with the arguments
+                    $args = array_merge($defaults, $text);
+                    $fontColor = is_array($args['fonts-color']) ? $args['fonts-color'] : $this->_hex2rgb($args['fonts-color']);
+                    $text_color = imagecolorallocate($image, $fontColor[0], $fontColor[1], $fontColor[2]);
 
-					imagettftext(
-						$image, 
-						$args['font-size'], 
-						$args['angle'],
-						$args['x-position'],
-						$args['y-position'],
-						$text_color, 
-						$args['font'], 
-						$args['text']);
+                    $this->imagettftextSp(
+                        $image,
+                        $args['fonts-size'],
+                        $args['angle'],
+                        $args['x-position'],
+                        $args['y-position'],
+                        $text_color,
+                        $args['fonts'],
+                        $args['text'],
+                        $args['letter-spacing']);
 				}
 
 			$delay = (array_key_exists('delay', $frame)) ? $frame['delay'] : $this->_defaultDelay;

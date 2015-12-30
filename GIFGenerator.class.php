@@ -87,8 +87,7 @@ Class GIFGenerator {
 	 * @return void           		
 	 */
 	private function imagettftextSp($image, $fontsize, $angle, $x, $y, $color, $font, $text, $spacing = 0) {
-		if ($spacing == 0)
-		{
+		if ($spacing == 0) {
 			$txt = imagettftext($image, $fontsize, $angle, $x, $y, $color, $font, $text);
 		} else {
 			$temp_x = $x;

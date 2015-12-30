@@ -39,22 +39,18 @@ Class GIFGenerator {
 		$this->_defaultRepeat = $args['repeat'];
 	}
 
-    private function imagettftextSp($image, $size, $angle, $x, $y, $color, $font, $text, $spacing = 0)
-    {
-        if ($spacing == 0)
-        {
-            $bbox = imagettftext($image, $size, $angle, $x, $y, $color, $font, $text);
-        }
-        else
-        {
-            $temp_x = $x;
-            for ($i = 0; $i < strlen($text); $i++)
-            {
-                $bbox = imagettftext($image, $size, $angle, $temp_x, $y, $color, $font, $text[$i]);
-                $temp_x += $spacing + ($bbox[2] - $bbox[0]);
-            }
-        }
-    }
+	private function imagettftextSp($image, $size, $angle, $x, $y, $color, $font, $text, $spacing = 0) {
+		if ($spacing == 0)
+		{
+			$txt = imagettftext($image, $size, $angle, $x, $y, $color, $font, $text);
+			} else {
+			$temp_x = $x;
+			for ($i = 0; $i < strlen($text); $i++) {
+				$txt = imagettftext($image, $size, $angle, $temp_x, $y, $color, $font, $text[$i]);
+				$temp_x += $spacing + ($txt[2] - $txt[0]);
+			}
+		}
+	}
 
 	public function generate(array $array) {
 		$frames = array();

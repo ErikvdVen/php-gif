@@ -1,6 +1,34 @@
 <?php
 include('GIFEncoder.class.php');
 
+/*
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * This software consists of voluntary contributions made by many individuals
+ * and is licensed under the MIT license. For more information, see
+ * <http://www.doctrine-project.org>.
+ *
+ * 
+ * GIFGenerator makes it easier for users to create GIF images with PHP by using
+ * the GIFEncoder class. GIFGenerator gives you extra features
+ * like text font-spacing, easy usage of hexadecimal colors and more. 
+ * Provide the GIFGenerator an array with all desired GIF image frames and
+ * GIFGenerator handles the rest for you.
+ *
+ * @license http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @author Erik van de Ven <erikvandeven100@gmail.com>
+ */
+
 Class GIFGenerator {
 
 	private $_defaultYPosition;
@@ -12,6 +40,11 @@ Class GIFGenerator {
 	private $_defaultDelay; 
 	private $_defaultRepeat; 
 
+	/**
+	 * Constructor of the GIFGenerator object which sets the default values
+	 * 
+	 * @param array $kwargs default values to override
+	 */
 	function __construct(array $kwargs = array()) {
 
 		// Set defaults
@@ -39,19 +72,39 @@ Class GIFGenerator {
 		$this->_defaultRepeat = $args['repeat'];
 	}
 
-	private function imagettftextSp($image, $size, $angle, $x, $y, $color, $font, $text, $spacing = 0) {
+	/**
+	 * imagettftext with letter-spacing as extra feature
+	 * 
+	 * @param  string  $image   	background image of the GIF
+	 * @param  integer $fontsize    fontsize of the text
+	 * @param  integer $angle   	rotation angle of the text
+	 * @param  integer $x       	x-position of the text inside the image
+	 * @param  integer $y       	y-position of the text inside the image
+	 * @param  string  $color   	text color
+	 * @param  integer $font    	font-family fo the text
+	 * @param  string  $text    	the actual text
+	 * @param  integer $spacing 	letter-spacing of the text
+	 * @return void           		
+	 */
+	private function imagettftextSp($image, $fontsize, $angle, $x, $y, $color, $font, $text, $spacing = 0) {
 		if ($spacing == 0)
 		{
-			$txt = imagettftext($image, $size, $angle, $x, $y, $color, $font, $text);
-			} else {
+			$txt = imagettftext($image, $fontsize, $angle, $x, $y, $color, $font, $text);
+		} else {
 			$temp_x = $x;
 			for ($i = 0; $i < strlen($text); $i++) {
-				$txt = imagettftext($image, $size, $angle, $temp_x, $y, $color, $font, $text[$i]);
+				$txt = imagettftext($image, $fontsize, $angle, $temp_x, $y, $color, $font, $text[$i]);
 				$temp_x += $spacing + ($txt[2] - $txt[0]);
 			}
 		}
 	}
 
+	/**
+	 * Generates the actual GIF image
+	 * 
+	 * @param  array  	$array array with all image frames
+	 * @return resource        returns the actual GIF image
+	 */
 	public function generate(array $array) {
 		$frames = array();
 		$frame_delay = array();
@@ -107,6 +160,12 @@ Class GIFGenerator {
 		return $gif->GetAnimation();
 	}
 
+	/**
+	 * Creates an actual GIF image from the given source
+	 * 
+	 * @param  string 	$imagePath path to the image
+	 * @return resource            returns the image
+	 */
 	private function _createImage($imagePath) {
 		$cImage = null;
 		$tmp = explode('.', $imagePath);
@@ -125,11 +184,12 @@ Class GIFGenerator {
 		return $cImage;
 	}
 
-	private function _endsWith($haystack, $needle) {
-	    // search forward starting from end minus needle length characters
-	    return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== FALSE);
-	}
-
+	/**
+	 * Converts hexadecimal color string to an array with rgb values
+	 * 
+	 * @param  string $hex the hexadecimal color which needs to be converted
+	 * @return array       returns an array with the rgb values
+	 */
 	private function _hex2rgb($hex) {
 	   $hex = str_replace("#", "", $hex);
 
@@ -144,8 +204,7 @@ Class GIFGenerator {
 	   }
 	   $rgb = array($r, $g, $b);
 
-	   //return implode(",", $rgb); // returns the rgb values separated by commas
-	   return $rgb; // returns an array with the rgb values
+	   return $rgb; 
 	}
 }
 ?>

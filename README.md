@@ -3,7 +3,7 @@ Below GIF image is an example image which can contain real-time data. A PHP scri
 
 For below image this doesn't work, unfortunately, because GitHub downloads the image once and stores it locally. Most e-mail clients, however, do load the images directly from source. Successfully tested with Gmail and Outlook 2011 (Mac OSX). 
 
-*Important note: Outlook 2007, 2010 and 2013 for Windows will only show the first frame. More information about this, coming soon! TIP!: Keep the first frame universal, so it doesn't matter the GIF image animates or not.*
+*Important note: Outlook 2007, 2010 and 2013 for Windows will only show the first frame. TIP!: Keep the first frame universal, so it doesn't matter the GIF image animates or not.*
 
 ![Live countdown to new year](http://only-media.nl/gif/gif.php)
 

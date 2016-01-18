@@ -1,0 +1,20 @@
+{
+    "name": "erikvdven/php-gif",
+    "type": "library",
+    "homepage": "https://github.com/ErikvdVen/php-gif",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erik van de Ven",
+            "email": "info@only-media.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "files": [
+            "GIFGenerator.class.php"
+        ]
+    }
+}

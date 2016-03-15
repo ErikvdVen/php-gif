@@ -6,15 +6,16 @@
     "authors": [
         {
             "name": "Erik van de Ven",
-            "email": "info@only-media.nl"
+            "email": "info@only-media.nl",
+            "homepage": "http://erikvandeven.com/"
         }
     ],
     "require": {
         "php": ">=5.3.0"
     },
     "autoload": {
-        "files": [
-            "GIFGenerator.class.php"
-        ]
+        "psr-4": {
+            "ErikvdVen\\":"src/"
+        }
     }
 }

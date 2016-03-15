@@ -1,5 +1,7 @@
 <?php
-include('GIFEncoder.class.php');
+
+namespace ErikvdVen\Gif;
+use \ErikvdVen\Gif\GIFEncoder;
 
 /*
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS

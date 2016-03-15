@@ -15,7 +15,7 @@ I received some questions about Gmail so lets describe this mail client a bit mo
 ##Composer Installation
 1. Get Composer
 2. Require php-gif with `php composer.phar require erikvdven/php-gif`
-3. Add the following to your application's main PHP file: require 'vendor/autoload.php';
+3. Add the following to your application's main PHP file: `require 'vendor/autoload.php';`
 
 ##Getting Started
 

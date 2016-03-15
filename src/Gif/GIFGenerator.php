@@ -2,7 +2,7 @@
 
 namespace ErikvdVen\Gif;
 
-use \ErikvdVen\Gif\GIFEncoder;
+use GIFEncoder;
 
 /*
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS

@@ -2,7 +2,7 @@
 
 namespace ErikvdVen\Gif;
 
-use \ErikvdVen\Gif\GifEncoder;
+use \ErikvdVen\Gif\GIFEncoder;
 
 /*
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
@@ -22,17 +22,17 @@ use \ErikvdVen\Gif\GifEncoder;
  * <http://www.doctrine-project.org>.
  *
  * 
- * GifGenerator makes it easier for users to create GIF images with PHP by using
- * the GifEncoder class. GifGenerator gives you extra features
+ * GIFGenerator makes it easier for users to create GIF images with PHP by using
+ * the GIFEncoder class. GIFGenerator gives you extra features
  * like text font-spacing, easy usage of hexadecimal colors and more. 
- * Provide the GifGenerator an array with all desired GIF image frames and
- * GifGenerator handles the rest for you.
+ * Provide the GIFGenerator an array with all desired GIF image frames and
+ * GIFGenerator handles the rest for you.
  *
  * @license http://www.opensource.org/licenses/mit-license.html  MIT License
  * @author Erik van de Ven <erikvandeven100@gmail.com>
  */
 
-class GifGenerator {
+Class GIFGenerator {
 
 	private $_defaultYPosition;
 	private $_defaultXPosition;
@@ -44,7 +44,7 @@ class GifGenerator {
 	private $_defaultRepeat; 
 
 	/**
-	 * Constructor of the GifGenerator object which sets the default values
+	 * Constructor of the GIFGenerator object which sets the default values
 	 * 
 	 * @param array $kwargs default values to override
 	 */
@@ -158,7 +158,7 @@ class GifGenerator {
 
 
 		$repeat = (array_key_exists('repeat', $array)) ? $array['repeat'] : $this->_defaultRepeat;
-		$gif = new GifEncoder($frames,$frame_delay,$repeat,2,0,0,0,0,'bin');
+		$gif = new GIFEncoder($frames,$frame_delay,$repeat,2,0,0,0,0,'bin');
 		return $gif->GetAnimation();
 	}
 

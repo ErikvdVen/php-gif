@@ -5,7 +5,7 @@ namespace ErikvdVen\Gif;
 /*
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::
-::	GifEncoder Version 3.0 by László Zsidi, http://gifs.hu
+::	GIFEncoder Version 3.0 by László Zsidi, http://gifs.hu
 ::
 ::	This class is a rewritten 'GifMerge.class.php' version.
 ::
@@ -20,16 +20,15 @@ namespace ErikvdVen\Gif;
 ::
 ::
 ::
-::  Try on-line GIFBuilder Form demo based on GifEncoder.
+::  Try on-line GIFBuilder Form demo based on GIFEncoder.
 ::
 ::  http://gifs.hu/phpclasses/demos/GifBuilder/
 ::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 */
-
-class GifEncoder {
+Class GIFEncoder {
 	var $GIF = "GIF89a";		/* GIF header 6 bytes	*/
-	var $VER = "GifEncoder V3.00";	/* Encoder version		*/
+	var $VER = "GIFEncoder V3.00";	/* Encoder version		*/
 	var $BUF = Array ( );
 	var $OFS = Array ( );
 	var $SIG =  0;
@@ -46,7 +45,7 @@ class GifEncoder {
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
 	::
-	::	GifEncoder...
+	::	GIFEncoder...
 	::
 	*/
 	function __construct($GIF_src, $GIF_dly, $GIF_lop, $GIF_dis,$GIF_red, $GIF_grn, $GIF_blu, $GIF_ofs,$GIF_mod) 
@@ -92,11 +91,11 @@ class GifEncoder {
 				}
 			}
 		}
-		GifEncoder::GIFAddHeader ( );
+		GIFEncoder::GIFAddHeader ( );
 		for ( $i = 0; $i < count ( $this->BUF ); $i++ ) {
-			GifEncoder::GIFAddFrames ( $i, $GIF_dly [ $i ] );
+			GIFEncoder::GIFAddFrames ( $i, $GIF_dly [ $i ] );
 		}
-		GifEncoder::GIFAddFooter ( );
+		GIFEncoder::GIFAddFooter ( );
 	}
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -112,7 +111,7 @@ class GifEncoder {
 			$this->GIF .= substr ( $this->BUF [ 0 ], 13, $cmap	);
 			if($this->LOP !== false)
 			{
-				$this->GIF .= "!\377\13NETSCAPE2.0\3\1" . GifEncoder::GIFWord ( $this->LOP ) . "\0";
+				$this->GIF .= "!\377\13NETSCAPE2.0\3\1" . GIFEncoder::GIFWord ( $this->LOP ) . "\0";
 			}
 		}
 	}
@@ -159,7 +158,7 @@ class GifEncoder {
 		}
 		if ( ord ( $this->BUF [ $i ] { 10 } ) & 0x80 && $this->IMG > -1 ) {
 			if ( $Global_len == $Locals_len ) {
-				if ( GifEncoder::GIFBlockCompare ( $Global_rgb, $Locals_rgb, $Global_len ) ) {
+				if ( GIFEncoder::GIFBlockCompare ( $Global_rgb, $Locals_rgb, $Global_len ) ) {
 					$this->GIF .= ( $Locals_ext . $Locals_img . $Locals_tmp );
 				}
 				else {

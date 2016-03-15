@@ -30,7 +30,7 @@ header("Pragma: no-cache");
 header ('Content-type:image/gif');
 
 // Include the GIFGenerator class
-include('GIFGenerator.class.php');
+use ErikvdVen\Gif\GIFGenerator;
 ```
 On the next lines you can create a GIF image by first initializing the GIFGenerator object and creating an array with all the image frames:
 
@@ -77,7 +77,7 @@ header("Pragma: no-cache");
 header ('Content-type:image/gif');
 
 // Include the GIFGenerator class
-include('GIFGenerator.class.php');
+use ErikvdVen\Gif\GIFGenerator;
 
 // Initialize a new GIFGenerator object
 $gif = new GIFGenerator();

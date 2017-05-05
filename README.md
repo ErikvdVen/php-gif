@@ -8,7 +8,7 @@ For below image this doesn't work, unfortunately, because GitHub downloads the i
 
 *Important note: Outlook 2007, 2010 and 2013 for Windows will only show the first frame. TIP!: Keep the first frame universal, so it doesn't matter the GIF image animates or not.*
 
-![Live countdown to new year](http://only-media.nl/)
+![Live countdown to new year](http://only-media.nl/gif/gif.php)
 
 ## Note
 I received some questions about Gmail so lets describe this mail client a bit more in detail. This script is successfully tested with Gmail, at the moment of writing, which is *2015-12-23*. Gmail loads the images via their own proxy, so not directly from source. There are different opinions about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations that Gmail caches the images, but still respect the cache headers, so you can instruct Gmail how often to refresh the data. I personally had no trouble with the cache whatsoever! I've tested this countdown image numerous times in Gmail and of course you can test it yourself as well. Just to be sure I've added some cache disabling headers in the examples.

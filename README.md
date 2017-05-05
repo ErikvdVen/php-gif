@@ -21,6 +21,7 @@ I received some questions about Gmail so lets describe this mail client a bit mo
 ## Getting Started
 
 Create a PHP file and add these headers at the beginning of the file:
+
 ```php
 // Caching disable headers
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -33,6 +34,7 @@ header ('Content-type:image/gif');
 // Include the GIFGenerator class
 use ErikvdVen\Gif\GIFGenerator;
 ```
+
 On the next lines you can create a GIF image by first initializing the GIFGenerator object and creating an array with all the image frames:
 
 ```php
@@ -59,6 +61,7 @@ $imageFrames = array(
 );
 ```
 Finally you generate the image and `echo` the results on the screen: 
+
 ```php
 echo $gif->generate($imageFrames);
 ```

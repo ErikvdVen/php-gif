@@ -114,7 +114,7 @@ Class GIFGenerator {
 			$image = $this->_createImage($frame['image']);
 			
 			if(array_key_exists('text', $frame))
-				foreach($frame['text'] as $text) {
+				foreach($frame['text'] as $key => $text) {
 
                     // Set defaults
                     $defaults = array(

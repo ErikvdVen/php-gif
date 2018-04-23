@@ -32,9 +32,9 @@ for ($i=1; $i<20; $i++){
 	);
 
 	$textDefaults = array(
-					'font-size' => 24,
+					'fonts-size' => 24,
 					'angle' => 0,
-					'font-color' => '#000',
+					'fonts-color' => '#000',
 					'y-position' => 130
 					);
 

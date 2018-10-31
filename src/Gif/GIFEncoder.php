@@ -45,7 +45,7 @@ Class GIFEncoder {
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
 	::
-	::	GIFEncoder...
+	::	GIFEncoder (Encode the GIF)...
 	::
 	*/
 	function __construct($GIF_src, $GIF_dly, $GIF_lop, $GIF_dis,$GIF_red, $GIF_grn, $GIF_blu, $GIF_ofs,$GIF_mod) 
@@ -100,7 +100,7 @@ Class GIFEncoder {
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
 	::
-	::	GIFAddHeader...
+	::	GIFAddHeader.(Add Header on Frame)..
 	::
 	*/
 	function GIFAddHeader ( ) {
@@ -118,7 +118,7 @@ Class GIFEncoder {
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
 	::
-	::	GIFAddFrames...
+	::	GIFAddFrames (Add Frame on GIF)...
 	::
 	*/
 	function GIFAddFrames ( $i, $d ) {
@@ -209,7 +209,7 @@ Class GIFEncoder {
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
 	::
-	::	GIFAddFooter...
+	::	GIFAddFooter (Add footer in GIF)...
 	::
 	*/
 	function GIFAddFooter ( ) {
@@ -236,7 +236,7 @@ Class GIFEncoder {
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
 	::
-	::	GIFWord...
+	::	GIFWord (Create Text Word to Give)...
 	::
 	*/
 	function GIFWord ( $int ) {
@@ -245,7 +245,7 @@ Class GIFEncoder {
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
 	::
-	::	GetAnimation...
+	::	GetAnimation.(Create Image to animation)..
 	::
 	*/
 	function GetAnimation ( ) {

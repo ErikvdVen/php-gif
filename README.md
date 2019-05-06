@@ -14,7 +14,7 @@ For below image this doesn't work, unfortunately, because GitHub downloads the i
 I received some questions about Gmail so lets describe this mail client a bit more in detail. This script is successfully tested with Gmail, at the moment of writing, which is *2015-12-23*. Gmail loads the images via their own proxy, so not directly from source. There are different opinions about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations that Gmail caches the images, but still respect the cache headers, so you can instruct Gmail how often to refresh the data. I personally had no trouble with the cache whatsoever! I've tested this countdown image numerous times in Gmail and of course you can test it yourself as well. Just to be sure I've added some cache disabling headers in the examples.
 
 ## Composer Installation
-1. Get Composer
+1. ![Get Composer](https://getcomposer.org/)
 2. Require php-gif with `php composer.phar require erikvdven/php-gif`
 3. Add the following to your application's main PHP file: `require 'vendor/autoload.php';`
 

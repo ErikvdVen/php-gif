@@ -19,10 +19,10 @@ namespace ErikvdVen\Gif;
  * and is licensed under the MIT license. For more information, see
  * <http://www.doctrine-project.org>.
  *
- * 
+ *
  * GIFGenerator makes it easier for users to create GIF images with PHP by using
  * the GIFEncoder class. GIFGenerator gives you extra features
- * like text font-spacing, easy usage of hexadecimal colors and more. 
+ * like text font-spacing, easy usage of hexadecimal colors and more.
  * Provide the GIFGenerator an array with all desired GIF image frames and
  * GIFGenerator handles the rest for you.
  *
@@ -37,32 +37,32 @@ Class GIFGenerator {
 	private $_defaultAngle;
 	private $_defaultFont;
 	private $_defaultFontColor;
-	private $_defaultFontSize; 
-	private $_defaultDelay; 
-	private $_defaultRepeat; 
+	private $_defaultFontSize;
+	private $_defaultDelay;
+	private $_defaultRepeat;
 
 	/**
 	 * Constructor of the GIFGenerator object which sets the default values
-	 * 
+	 *
 	 * @param array $kwargs default values to override
 	 */
-	function __construct(array $kwargs = array()) {
+	function __construct(array $kwargs = []) {
 
 		// Set defaults
-		$defaults = array(
+		$defaults = [
 	        "y-position" => 100,
 	        "x-position" => 100,
 	        "angle" => 0,
 	        "fonts" => __DIR__.'/fonts/Lato-Light.ttf',
-	        "fonts-color" => array(255,255,255),
+	        "fonts-color" => [255,255,255],
 	        "fonts-size" => 12,
 	        "delay" => 100,
 	        "repeat" => 0
-	    );
+	    ];
 
 		// Overwrite all the defaults with the arguments
     	$args = array_merge($defaults,$kwargs);
-		
+
 		$this->_defaultYPosition = $args['y-position'];
 		$this->_defaultXPosition = $args['x-position'];
 		$this->_defaultAngle = $args['angle'];
@@ -75,7 +75,7 @@ Class GIFGenerator {
 
 	/**
 	 * imagettftext with letter-spacing as extra feature
-	 * 
+	 *
 	 * @param  string  $image   	background image of the GIF
 	 * @param  integer $fontsize    fontsize of the text
 	 * @param  integer $angle   	rotation angle of the text
@@ -85,7 +85,7 @@ Class GIFGenerator {
 	 * @param  integer $font    	font-family fo the text
 	 * @param  string  $text    	the actual text
 	 * @param  integer $spacing 	letter-spacing of the text
-	 * @return void           		
+	 * @return void
 	 */
 	private function imagettftextSp($image, $fontsize, $angle, $x, $y, $color, $font, $text, $spacing = 0) {
 		if ($spacing == 0) {
@@ -101,23 +101,23 @@ Class GIFGenerator {
 
 	/**
 	 * Generates the actual GIF image
-	 * 
+	 *
 	 * @param  array  	$array array with all image frames
 	 * @return resource        returns the actual GIF image
 	 */
 	public function generate(array $array) {
-		$frames = array();
-		$frame_delay = array();
+		$frames = [];
+		$frame_delay = [];
 
 		foreach($array['frames'] as $frame) {
 
 			$image = $this->_createImage($frame['image']);
-			
+
 			if(array_key_exists('text', $frame))
 				foreach($frame['text'] as $key => $text) {
 
                     // Set defaults
-                    $defaults = array(
+                    $defaults = [
                         "angle" => $this->_defaultAngle,
                         "fonts" => $this->_defaultFont,
                         "fonts-color" => $this->_defaultFontColor,
@@ -126,7 +126,7 @@ Class GIFGenerator {
                         "x-position" => $this->_defaultXPosition,
                         "text" => null,
                         "letter-spacing" => 0
-                    );
+                    ];
 
                     // Overwrite all the defaults with the arguments
                     $args = array_merge($defaults, $text);
@@ -162,7 +162,7 @@ Class GIFGenerator {
 
 	/**
 	 * Creates an actual GIF image from the given source
-	 * 
+	 *
 	 * @param  string 	$imagePath path to the image
 	 * @return resource            returns the image
 	 */
@@ -186,7 +186,7 @@ Class GIFGenerator {
 
 	/**
 	 * Converts hexadecimal color string to an array with rgb values
-	 * 
+	 *
 	 * @param  string $hex the hexadecimal color which needs to be converted
 	 * @return array       returns an array with the rgb values
 	 */
@@ -202,9 +202,8 @@ Class GIFGenerator {
 	      $g = hexdec(substr($hex,2,2));
 	      $b = hexdec(substr($hex,4,2));
 	   }
-	   $rgb = array($r, $g, $b);
+	   $rgb = [$r, $g, $b];
 
-	   return $rgb; 
+	   return $rgb;
 	}
 }
-?>

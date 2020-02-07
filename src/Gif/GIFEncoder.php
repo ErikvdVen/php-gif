@@ -5,7 +5,7 @@ namespace ErikvdVen\Gif;
 /*
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::
-::	GIFEncoder Version 3.0 by László Zsidi, http://gifs.hu
+::	GIFEncoder Version 3.0 by Lï¿½szlï¿½ Zsidi, http://gifs.hu
 ::
 ::	This class is a rewritten 'GifMerge.class.php' version.
 ::
@@ -29,26 +29,27 @@ namespace ErikvdVen\Gif;
 Class GIFEncoder {
 	var $GIF = "GIF89a";		/* GIF header 6 bytes	*/
 	var $VER = "GIFEncoder V3.00";	/* Encoder version		*/
-	var $BUF = Array ( );
-	var $OFS = Array ( );
+	var $BUF = [];
+	var $OFS = [];
 	var $SIG =  0;
 	var $LOP =  0;
 	var $DIS =  2;
 	var $COL = -1;
 	var $IMG = -1;
-	var $ERR = Array (
+	var $ERR = [
 		'ERR00'=>"Does not supported function for only one image!",
 		'ERR01'=>"Source is not a GIF image!",
 		'ERR02'=>"Unintelligible flag ",
 		'ERR03'=>"Does not make animation from animated GIF source",
-	);
+	]
+    ;
 	/*
 	:::::::::::::::::::::::::::::::::::::::::::::::::::
 	::
 	::	GIFEncoder (Encode the GIF)...
 	::
 	*/
-	function __construct($GIF_src, $GIF_dly, $GIF_lop, $GIF_dis,$GIF_red, $GIF_grn, $GIF_blu, $GIF_ofs,$GIF_mod) 
+	function __construct($GIF_src, $GIF_dly, $GIF_lop, $GIF_dis,$GIF_red, $GIF_grn, $GIF_blu, $GIF_ofs,$GIF_mod)
 	{
 		if ( ! is_array ( $GIF_src ) && ! is_array ( $GIF_dly ) ) {
 			printf	( "%s: %s", $this->VER, $this->ERR [ 'ERR00' ] );

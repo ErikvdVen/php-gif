@@ -2,6 +2,9 @@
 [![Latest Stable Version](https://poser.pugx.org/erikvdven/php-gif/v/stable)](https://packagist.org/packages/erikvdven/php-gif)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=erikvandeven100%40hotmail%2ecom&lc=NL&item_name=Erik%20van%20de%20Ven%20Github)
 
+|:warning: PHP-GIF is no longer actively maintained. [This fork](https://github.com/fakerybakery/PHP-GIF-Reborn) is maintained and currently supports PHP 7.4 and 8.1. :warning:|
+|---|
+
 Below GIF image is an example image which can contain real-time data. A PHP script calculates the pending time till new year and generates the GIF image. An ideal solution for sending e-mails with real-time data to customers. E-mail clients give you the opportunity to load images by URL and so everytime the client re-opens the e-mail message, the GIF will be re-generated with real-time data.
 
 For below image this doesn't work, unfortunately, because GitHub downloads the image once and stores it locally. Most e-mail clients, however, do load the images directly from source. Successfully tested with Gmail and Outlook 2011 (Mac OSX). 
@@ -15,7 +18,7 @@ I received some questions about Gmail so lets describe this mail client a bit mo
 
 ## Composer Installation
 1. [Get Composer](https://getcomposer.org/)
-2. Require php-gif with `php composer.phar require erikvdven/php-gif`
+2. Require php-gif with `composer require mrfakename/php-gif-reborn`
 3. Add the following to your application's main PHP file: `require 'vendor/autoload.php';`
 
 ## Getting Started

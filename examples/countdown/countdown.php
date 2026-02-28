@@ -1,4 +1,7 @@
 <?php
+// make sure Composer autoload is available (run `composer install` in project root)
+require __DIR__ . '/../../vendor/autoload.php';
+
 // Caching disable headers
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
@@ -32,6 +35,7 @@ for ($i=1; $i<20; $i++){
 	);
 
 	$textDefaults = array(
+					'fonts' => __DIR__ . '/fonts/Lato-Light.ttf',
 					'fonts-size' => 24,
 					'angle' => 0,
 					'fonts-color' => '#000',
@@ -39,7 +43,8 @@ for ($i=1; $i<20; $i++){
 					);
 
 	$imageFrames['frames'][$i] = array('image'=>null,'delay'=>null);
-	$imageFrames['frames'][$i]['image'] = realpath(__DIR__) . '/../images/newyear_count.png';
+	// images are located in the same folder as this script
+	$imageFrames['frames'][$i]['image'] = __DIR__ . '/images/newyear_count.png';
 	$imageFrames['frames'][$i]['delay'] = 100;
 
 	foreach($clockParts as $key => $value){
@@ -68,11 +73,12 @@ for ($i=1; $i<20; $i++){
 
 // Add a different last frame
 $imageFrames['frames'][] = array(
-	'image' => realpath(__DIR__) . '/../images/newyear.png',
+	'image' => realpath(__DIR__) . '/images/newyear.png',
 	'text' => array(
 		array(
 			'text' => 'It\'s almost new year!!!',
-			'font-size' => 30,
+			'fonts' => __DIR__ . '/fonts/Lato-Light.ttf',
+			'fonts-size' => 30,
 			'angle' => 0,
 			'font-color' => '#000',
 			'y-position' => 135,

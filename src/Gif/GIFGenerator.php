@@ -88,6 +88,11 @@ Class GIFGenerator {
 	 * @return void
 	 */
 	private function imagettftextSp($image, $fontsize, $angle, $x, $y, $color, $font, $text, $spacing = 0) {
+		// make sure the font file exists before trying to draw text
+		if (!file_exists($font) || !is_readable($font)) {
+			throw new \InvalidArgumentException("Font file not found: $font");
+		}
+
 		if ($spacing == 0) {
 			$txt = imagettftext($image, $fontsize, $angle, $x, $y, $color, $font, $text);
 		} else {
@@ -165,8 +170,13 @@ Class GIFGenerator {
 	 *
 	 * @param  string 	$imagePath path to the image
 	 * @return resource            returns the image
+	 * @throws \InvalidArgumentException if the file cannot be loaded
 	 */
 	private function _createImage($imagePath) {
+		if (!file_exists($imagePath) || !is_readable($imagePath)) {
+			throw new \InvalidArgumentException("Image file not found: $imagePath");
+		}
+
 		$cImage = null;
 		$tmp = explode('.', $imagePath);
 		$ext = end($tmp);
@@ -179,6 +189,12 @@ Class GIFGenerator {
 			case 'png':
 				$cImage = imagecreatefrompng($imagePath);
 				break;
+			default:
+				throw new \InvalidArgumentException("Unsupported image extension: $ext");
+		}
+
+		if ($cImage === false) {
+			throw new \RuntimeException("Failed to create image resource from $imagePath");
 		}
 
 		return $cImage;

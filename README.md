@@ -8,9 +8,8 @@ That said, the project is **not abandoned**:
 - Response times may be slower than in the past.
 If you're waiting for feedback, feel free to send me a message on LinkedIn (see my profile page).
 
-Below GIF image is an example image which can contain real-time data. A PHP script calculates the pending time till new year and generates the GIF image. An ideal solution for sending e-mails with real-time data to customers. E-mail clients give you the opportunity to load images by URL and so everytime the client re-opens the e-mail message, the GIF will be re-generated with real-time data.
-
-For below image this doesn't work, unfortunately, because GitHub downloads the image once and stores it locally. Most e-mail clients, however, do load the images directly from source. Successfully tested with Gmail and Outlook 2011 (Mac OSX). 
+## Example
+`examples/countdown/countdown.php` contains an example of generating an image which can contain real-time data. A PHP script calculates the pending time till new year and generates the GIF image. An ideal solution for sending e-mails with real-time data to customers. Some E-mail clients give you the opportunity to load images by URL and so everytime the client re-opens the e-mail message, the GIF will be re-generated with real-time data.
 
 ## Note
 I received some questions about Gmail so lets describe this mail client a bit more in detail. This script is successfully tested with Gmail, at the moment of writing, which is *2015-12-23*. Gmail loads the images via their own proxy, so not directly from source. There are different opinions about the proxy, but it seems that Google's proxy protects your private data and only informs the sender that the email has been opened. There are speculations that Gmail caches the images, but still respect the cache headers, so you can instruct Gmail how often to refresh the data. I personally had no trouble with the cache whatsoever! I've tested this countdown image numerous times in Gmail and of course you can test it yourself as well. Just to be sure I've added some cache disabling headers in the examples.

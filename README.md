@@ -1,7 +1,12 @@
 # php-gif
 [![Latest Stable Version](https://poser.pugx.org/erikvdven/php-gif/v/stable)](https://packagist.org/packages/erikvdven/php-gif)
 
-**IMPORTANT NOTE:** This repository is not actively maintained anymore. I moved from PHP to Python years ago, so that's basically why. If you would like to contribute on this repository, feel free to open up a PR and perhaps I can add you as a contributor as well. There are also people who forked this repository and decided to built further on that. For a fork which is compatible with PHP 8, see [phpgif/phpgif](https://github.com/phpgif/phpgif)
+## Project status
+Over the years my main focus has shifted from PHP to Python and Java, and as a result PHP is no longer part of my day-to-day work. Because of that I'm not actively developing new features for this project.
+That said, the project is **not abandoned**:
+- I’m still happy to review and merge open Pull Requests.
+- Response times may be slower than in the past.
+If you're waiting for feedback, feel free to send me a message on LinkedIn (see my profile page).
 
 Below GIF image is an example image which can contain real-time data. A PHP script calculates the pending time till new year and generates the GIF image. An ideal solution for sending e-mails with real-time data to customers. E-mail clients give you the opportunity to load images by URL and so everytime the client re-opens the e-mail message, the GIF will be re-generated with real-time data.
 

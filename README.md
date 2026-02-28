@@ -1,6 +1,5 @@
 # php-gif
 [![Latest Stable Version](https://poser.pugx.org/erikvdven/php-gif/v/stable)](https://packagist.org/packages/erikvdven/php-gif)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=erikvandeven100%40hotmail%2ecom&lc=NL&item_name=Erik%20van%20de%20Ven%20Github)
 
 **IMPORTANT NOTE:** This repository is not actively maintained anymore. I moved from PHP to Python years ago, so that's basically why. If you would like to contribute on this repository, feel free to open up a PR and perhaps I can add you as a contributor as well. There are also people who forked this repository and decided to built further on that. For a fork which is compatible with PHP 8, see [phpgif/phpgif](https://github.com/phpgif/phpgif)
 

@@ -3,10 +3,7 @@
 
 ## Project status
 Over the years my main focus has shifted from PHP to Python and Java, and as a result PHP is no longer part of my day-to-day work. Because of that I'm not actively developing new features for this project.
-That said, the project is **not abandoned**:
-- I’m still happy to review and merge open Pull Requests.
-- Response times may be slower than in the past.
-If you're waiting for feedback, feel free to send me a message on LinkedIn (see my profile page).
+That said, I'm still happy to review and merge open Pull Requests. If you're waiting for feedback, feel free to send me a message on LinkedIn (see my profile page).
 
 ## Example
 `examples/countdown/countdown.php` contains an example of generating an image which can contain real-time data. A PHP script calculates the pending time till new year and generates the GIF image. An ideal solution for sending e-mails with real-time data to customers. Some E-mail clients give you the opportunity to load images by URL and so everytime the client re-opens the e-mail message, the GIF will be re-generated with real-time data.
